@@ -5,7 +5,7 @@ const Dashboard = () => {
 
     return (
         <div>
-            {/* <AppBar />  */}
+            <AppBar /> 
         </div>
     )
 }; 

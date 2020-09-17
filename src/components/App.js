@@ -5,8 +5,8 @@ import Dashboard from './Dashboard/Dashboard';
 function App() {
   return (
     <div className="App">
-      <LogIn /> 
-      {/* <Dashboard />  */}
+      {/* <LogIn />  */}
+      <Dashboard /> 
     </div>
   );
 }
