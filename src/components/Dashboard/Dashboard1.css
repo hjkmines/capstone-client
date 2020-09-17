@@ -1,0 +1,11 @@
+.dashboard1 {
+    border-radius: 25px;
+    margin-top: 20px;
+    border-style: solid;
+    border-color: gray;
+    display: block;
+    height: 400px; 
+    background-color: white;
+    margin-left: 30px;
+    margin-right: 30px;
+}
