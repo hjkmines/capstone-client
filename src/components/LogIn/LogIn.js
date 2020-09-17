@@ -6,7 +6,7 @@ import logo from '../bugView.JPG';
 const LogIn = () => {
 
     return (
-        <div>
+        <div className='body' >
             <img 
                 src={logo} 
                 alt="bugview logo" 
