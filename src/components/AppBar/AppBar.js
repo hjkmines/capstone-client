@@ -7,6 +7,12 @@ import InputBase from '@material-ui/core/InputBase';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
+import MessageIcon from '@material-ui/icons/Message';
+import NotificationsIcon from '@material-ui/icons/Notifications';
+import GroupIcon from '@material-ui/icons/Group';
+import BugReportIcon from '@material-ui/icons/BugReport';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import './AppBar.css'; 
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -79,8 +85,19 @@ export default function SearchAppBar() {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-            Material-UI
+            BugView
           </Typography>
+          <div className='icons'>
+          <GroupIcon className='dashboard-icon' fontSize='large' /> 
+          <AccountCircleIcon className='dashboard-icon' fontSize='large' /> 
+          <MessageIcon className='dashboard-icon' fontSize='large' /> 
+          <BugReportIcon className='dashboard-icon' fontSize='large' /> 
+          <NotificationsIcon className='dashboard-icon' fontSize='large' /> 
+          </div>
+          <Typography className={classes.title} variant="h6" noWrap>
+            Sign Out 
+          </Typography>
+          <a></a>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />

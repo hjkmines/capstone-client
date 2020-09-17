@@ -8,9 +8,9 @@ const Dashboard = () => {
     return (
         <div>
             <AppBar /> 
-            <DataTable /> 
-            <NestedList /> 
-            <h1>Dashboard</h1>
+            {/* <DataTable />  */}
+            {/* <NestedList />  */}
+            {/* <h1>Dashboard</h1> */}
         </div>
     )
 }; 
