@@ -5,7 +5,7 @@ import VirtualTable from '../DataTable/VirtualTable';
 const BugReport = () => {
 
     return (
-        <div className='bug-report'>
+        <div>
             <VirtualTable />
         </div>
     )
