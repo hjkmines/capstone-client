@@ -1,6 +1,6 @@
 import React from 'react'; 
 // import AppBar from '../AppBar/AppBar'; 
-import DataTable from './DataTable'; 
+import DataTable from '../DataTable/DataTable'; 
 import NestedList from './NestedList'; 
 import Dashboard1 from './Dashboard1'; 
 import MiniDashboard from './MiniDashboard'; 
