@@ -1,13 +1,12 @@
 import React from 'react'; 
 import './BugReport.css'; 
-import DataTable from '../DataTable/DataTable'; 
-import EditableTable from '../DataTable/EditableTable'; 
+import VirtualTable from '../DataTable/VirtualTable'; 
 
 const BugReport = () => {
 
     return (
         <div className='bug-report'>
-            <EditableTable />
+            <VirtualTable />
         </div>
     )
 }; 
