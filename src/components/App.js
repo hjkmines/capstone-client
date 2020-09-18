@@ -1,5 +1,6 @@
 import React from 'react';
 import LogIn from './LogIn/LogIn'; 
+import LogOut from '../components/LogOut/LogOut'; 
 import Dashboard from './Dashboard/Dashboard'; 
 import BugReport from './BugReport/BugReport'; 
 import AppBar from './AppBar/AppBar'; 
@@ -12,9 +13,10 @@ function App() {
   return (
     <div className="App">
       {/* <LogIn />  */}
-      <AppBar /> 
+      <LogOut /> 
+      {/* <AppBar />  */}
       {/* <Dashboard />  */}
-      <BugReport /> 
+      {/* <BugReport />  */}
     </div>
   );
 }
