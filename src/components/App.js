@@ -9,7 +9,8 @@ function App() {
     <div className="App">
       {/* <LogIn />  */}
       <AppBar /> 
-      <Dashboard /> 
+      {/* <Dashboard />  */}
+      <BugReport /> 
     </div>
   );
 }
