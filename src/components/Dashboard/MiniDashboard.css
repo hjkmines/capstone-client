@@ -1,0 +1,9 @@
+.minis {
+    background-color: white;
+    border-radius: 25px;
+    border-style: solid;
+    display: inline;
+    width: 350px; 
+    height: 300px;
+    margin-top: 20px; 
+}
