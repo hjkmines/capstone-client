@@ -7,11 +7,11 @@ const LogIn = () => {
 
     return (
         <div className='body' >
-            <img 
+            {/* <img 
                 src={logo} 
                 alt="bugview logo" 
                 className="logo"
-            /> 
+            />  */}
         <div className='form'>
         <form 
             noValidate 

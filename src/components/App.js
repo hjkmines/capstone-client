@@ -1,6 +1,6 @@
 import React from 'react';
 import LogIn from './LogIn/LogIn'; 
-import LogOut from '../components/LogOut/LogOut'; 
+import SignUp from './SignUp/SignUp'; 
 import Dashboard from './Dashboard/Dashboard'; 
 import BugReport from './BugReport/BugReport'; 
 import AppBar from './AppBar/AppBar'; 
@@ -14,11 +14,11 @@ function App() {
   return (
     <div className="App">
       {/* <LogIn />  */}
-      {/* <LogOut />  */}
-      <AppBar /> 
+      <SignUp /> 
+      {/* <AppBar />  */}
       {/* <Dashboard />  */}
       {/* <BugReport />  */}
-      <CreateTicket /> 
+      {/* <CreateTicket />  */}
     </div>
   );
 }
