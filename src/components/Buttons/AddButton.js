@@ -6,6 +6,7 @@ import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 import KeyboardVoiceIcon from '@material-ui/icons/KeyboardVoice';
 import Icon from '@material-ui/core/Icon';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+import OpenDialog from '../CreateTicket/OpenDialog'; 
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -27,6 +28,8 @@ export default function IconLabelButtons() {
       >
         Create Ticket 
       </Button>
+      <OpenDialog /> 
+
     </div>
   );
 }

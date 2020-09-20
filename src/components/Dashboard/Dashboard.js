@@ -4,13 +4,15 @@ import NestedList from './NestedList';
 import Dashboard1 from './Dashboard1'; 
 import MiniDashboard from './MiniDashboard'; 
 import './Dashboard.css'; 
+import OpenDialog from '../CreateTicket/OpenDialog'; 
 import AddButton from '../Buttons/AddButton'; 
 
 const Dashboard = () => {
 
     return (
         <div>
-            <AddButton /> 
+            <OpenDialog />
+            {/* <AddButton />  */}
             {/* <AppBar />  */}
             {/* <Dashboard1 /> */}
             {/* <div className='mini-dashboard'>
