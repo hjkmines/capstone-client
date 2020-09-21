@@ -64,11 +64,15 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 export default function FullScreenDialog() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState('Controlled');
+//   const [value, setValue] = React.useState('Controlled');
   const [severity, setSeverity] = React.useState('Normal');
 
+//   const handleChange = (event) => {
+//     setValue(event.target.value);
+//   };
+
   const handleChange = (event) => {
-    setValue(event.target.value);
+    setSeverity(event.target.value);
   };
 
   const handleClickOpen = () => {
@@ -100,10 +104,10 @@ export default function FullScreenDialog() {
               <CloseIcon />
             </IconButton>
             <Typography variant="h6" className={classes.title}>
-              Sound
+              Create New Ticket 
             </Typography>
             <Button autoFocus color="inherit" onClick={handleClose}>
-              save
+              Submit 
             </Button>
           </Toolbar>
         </AppBar>
@@ -124,13 +128,18 @@ export default function FullScreenDialog() {
                 className='textfield item'
                 style={{ marginTop: '20px' }}
             />
+            <TextField 
+                type="standard-basic" 
+                id="standard-basic" 
+                label="Add GitHub Links to Source Code" 
+                className='textfield item'
+                style={{ marginTop: '20px' }}
+            />
             <TextField
                 id="standard-multiline-flexible"
                 label="Ticket Description"
                 multiline
                 rowsMax={4}
-                value={value}
-                onChange={handleChange}
             />
             <TextField
                 id="standard-select-currency"
