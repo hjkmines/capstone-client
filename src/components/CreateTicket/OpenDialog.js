@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
+import { TextField, Button } from '@material-ui/core';
 import Dialog from '@material-ui/core/Dialog';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItem from '@material-ui/core/ListItem';
@@ -26,6 +26,12 @@ const useStyles = makeStyles((theme) => ({
   button: {
     margin: theme.spacing(1),
   },
+  root: {
+    '& .MuiTextField-root': {
+      margin: theme.spacing(1),
+      width: '25ch',
+    },
+  }
 }));
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -35,6 +41,12 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 export default function FullScreenDialog() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
+
+  const [value, setValue] = React.useState('Controlled');
+
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -53,7 +65,6 @@ export default function FullScreenDialog() {
         size="large"
         className={classes.button}
         startIcon={<AddCircleOutlineIcon />}
-        variant="outlined" 
         onClick={handleClickOpen}
       >
         Create Ticket 
@@ -73,15 +84,33 @@ export default function FullScreenDialog() {
             </Button>
           </Toolbar>
         </AppBar>
-        <List>
-          <ListItem button>
-            <ListItemText primary="Phone ringtone" secondary="Titania" />
-          </ListItem>
-          <Divider />
-          <ListItem button>
-            <ListItemText primary="Default notification ringtone" secondary="Tethys" />
-          </ListItem>
-        </List>
+        <form 
+            noValidate 
+            autoComplete="off" 
+            className='login'
+        >
+            <TextField 
+                id="standard-basic" 
+                label="Ticket Name" 
+                className='textfield item'
+            />
+            <TextField
+                id="standard-multiline-flexible"
+                label="Ticket Description"
+                multiline
+                rowsMax={4}
+                value={value}
+                onChange={handleChange}
+            />
+            <TextField 
+                type="standard-basic" 
+                id="standard-basic" 
+                label="Assign Team Members" 
+                className='textfield item'
+                style={{ marginTop: '20px' }}
+            />
+        
+        </form>
       </Dialog>
     </div>
   );
