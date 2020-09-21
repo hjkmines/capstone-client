@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { TextField, Button } from '@material-ui/core';
+import { TextField, Button, MenuItem } from '@material-ui/core';
 import Dialog from '@material-ui/core/Dialog';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItem from '@material-ui/core/ListItem';
@@ -14,6 +14,20 @@ import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 
+const severities = [
+    {
+      value: 'High',
+      label: '🔴 High',
+    },
+    {
+      value: 'Normal',
+      label: '🟢 Normal',
+    },
+    {
+      value: 'Low',
+      label: '🟡 Low',
+    }
+  ];
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -31,6 +45,15 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(1),
       width: '25ch',
     },
+  }, 
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    width: 230,
   }
 }));
 
@@ -41,8 +64,8 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 export default function FullScreenDialog() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
-
   const [value, setValue] = React.useState('Controlled');
+  const [severity, setSeverity] = React.useState('Normal');
 
   const handleChange = (event) => {
     setValue(event.target.value);
@@ -94,6 +117,13 @@ export default function FullScreenDialog() {
                 label="Ticket Name" 
                 className='textfield item'
             />
+            <TextField 
+                type="standard-basic" 
+                id="standard-basic" 
+                label="Assign Team Members" 
+                className='textfield item'
+                style={{ marginTop: '20px' }}
+            />
             <TextField
                 id="standard-multiline-flexible"
                 label="Ticket Description"
@@ -102,14 +132,30 @@ export default function FullScreenDialog() {
                 value={value}
                 onChange={handleChange}
             />
-            <TextField 
-                type="standard-basic" 
-                id="standard-basic" 
-                label="Assign Team Members" 
-                className='textfield item'
-                style={{ marginTop: '20px' }}
+            <TextField
+                id="standard-select-currency"
+                select
+                label="Select"
+                value={severity}
+                onChange={handleChange}
+                helperText="Please select severity"
+            >
+                {severities.map((option) => (
+                    <MenuItem key={option.value} value={option.value}>
+                        {option.label}
+                </MenuItem>
+                ))}
+            </TextField>
+            <TextField
+                id="datetime-local"
+                label="Select Deadline"
+                type="datetime-local"
+                defaultValue="2017-05-24T10:30"
+                className={classes.textField}
+                InputLabelProps={{
+                shrink: true,
+                }}
             />
-        
         </form>
       </Dialog>
     </div>
