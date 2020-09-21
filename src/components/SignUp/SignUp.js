@@ -20,9 +20,24 @@ const LogIn = () => {
         >
             <TextField 
                 id="standard-basic" 
+                label="First Name" 
+                className='textfield item'
+            />
+            <TextField 
+                id="standard-basic" 
+                label="Last Name" 
+                className='textfield item'
+            />
+            <TextField 
+                id="standard-basic" 
+                label="Job Title" 
+                className='textfield item'
+            />
+            <TextField 
+                id="standard-basic" 
                 label="Email" 
                 className='textfield item'
-                />
+            />
             <TextField 
                 type="password" 
                 id="standard-basic" 
