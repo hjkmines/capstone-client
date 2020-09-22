@@ -23,6 +23,8 @@ import SaveIcon from '@material-ui/icons/Save';
 import PrintIcon from '@material-ui/icons/Print';
 import ShareIcon from '@material-ui/icons/Share';
 import FavoriteIcon from '@material-ui/icons/Favorite';
+import { Link } from 'react-router-dom'; 
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -151,14 +153,26 @@ export default function SearchAppBar() {
           </div> */}
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-            BugView
+            <Link to='/'>
+              BugView
+            </Link>
           </Typography>
           <div className='icons'>
-          <GroupIcon className='dashboard-icon' fontSize='large' /> 
-          <AccountCircleIcon className='dashboard-icon' fontSize='large' /> 
-          <MessageIcon className='dashboard-icon' fontSize='large' /> 
-          <BugReportIcon className='dashboard-icon' fontSize='large' /> 
-          <NotificationsIcon className='dashboard-icon' fontSize='large' /> 
+          <Link to='/teams'>
+            <GroupIcon className='dashboard-icon' fontSize='large' />
+          </Link>
+          <Link to='/profile'>
+            <AccountCircleIcon className='dashboard-icon' fontSize='large' />
+          </Link>
+          <Link to='/message'>
+            <MessageIcon className='dashboard-icon' fontSize='large' />
+          </Link>
+          <Link to='/bugreport'>
+            <BugReportIcon className='dashboard-icon' fontSize='large' /> 
+          </Link>
+          <Link to='/notification'>
+            <NotificationsIcon className='dashboard-icon' fontSize='large' /> 
+          </Link>
           </div>
           <Typography className={classes.title} variant="h6" noWrap>
             Sign Out 

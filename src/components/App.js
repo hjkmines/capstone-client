@@ -8,7 +8,7 @@ import Profile from '../components/Profile/Profile';
 import Notification from '../components/Notification/Notification'; 
 import Message from '../components/Message/Message'; 
 import Teams from '../components/Teams/Teams'; 
-import { Switch } from '@material-ui/core';
+import { Route, Switch } from 'react-router-dom'; 
 
 function App() {
   return (
@@ -22,6 +22,7 @@ function App() {
           <Route path="/message" component={Message} /> 
           <Route path="/bugreport" component={BugReport} /> 
           <Route path="/notification" component={Notification} /> 
+          <Route component={Error} /> 
         </Switch>
     </main>
       {/* <LogIn />  */}
