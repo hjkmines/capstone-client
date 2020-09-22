@@ -11,15 +11,10 @@ const Dashboard = () => {
 
     return (
         <div>
-            <OpenDialog />
             {/* <AddButton />  */}
             {/* <AppBar />  */}
-            {/* <Dashboard1 /> */}
-            {/* <div className='mini-dashboard'>
-                <MiniDashboard />
-                <MiniDashboard />
-                <MiniDashboard />
-            </div> */}
+            <Dashboard1 />
+            <OpenDialog />
             {/* <DataTable />  */}
             {/* <NestedList />  */}
             {/* <h1>Dashboard</h1> */}

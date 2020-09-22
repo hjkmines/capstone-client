@@ -13,6 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+import './CreateTicket.css'; 
 
 const severities = [
     {
@@ -85,17 +86,19 @@ export default function FullScreenDialog() {
 
   return (
     <div>
-
-      <Button
-        variant="contained"
-        color="primary"
-        size="large"
-        className={classes.button}
-        startIcon={<AddCircleOutlineIcon />}
-        onClick={handleClickOpen}
-      >
+      
+      <div className='create-ticket'>
+        <Button
+            variant="contained"
+            color="primary"
+            size="large"
+            className={classes.button}
+            startIcon={<AddCircleOutlineIcon />}
+            onClick={handleClickOpen}
+        >
         Create Ticket 
       </Button>
+      </div>
       
       <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
         <AppBar className={classes.appBar}>
@@ -119,20 +122,21 @@ export default function FullScreenDialog() {
             <TextField 
                 id="standard-basic" 
                 label="Ticket Name" 
-                className='textfield item'
+                className='textfield item input'
+                style={{ marginTop: '20px' }}
             />
             <TextField 
                 type="standard-basic" 
                 id="standard-basic" 
                 label="Assign Team Members" 
-                className='textfield item'
+                className='textfield item input'
                 style={{ marginTop: '20px' }}
             />
             <TextField 
                 type="standard-basic" 
                 id="standard-basic" 
                 label="Add GitHub Links to Source Code" 
-                className='textfield item'
+                className='textfield item input'
                 style={{ marginTop: '20px' }}
             />
             <TextField
@@ -140,6 +144,8 @@ export default function FullScreenDialog() {
                 label="Ticket Description"
                 multiline
                 rowsMax={4}
+                className='input'
+                style={{ marginTop: '20px' }}
             />
             <TextField
                 id="standard-select-currency"
@@ -147,7 +153,9 @@ export default function FullScreenDialog() {
                 label="Select"
                 value={severity}
                 onChange={handleChange}
+                className='input'
                 helperText="Please select severity"
+                style={{ marginTop: '20px' }}
             >
                 {severities.map((option) => (
                     <MenuItem key={option.value} value={option.value}>
@@ -159,6 +167,7 @@ export default function FullScreenDialog() {
                 id="datetime-local"
                 label="Select Deadline"
                 type="datetime-local"
+                style={{ marginTop: '20px' }}
                 defaultValue="2017-05-24T10:30"
                 className={classes.textField}
                 InputLabelProps={{

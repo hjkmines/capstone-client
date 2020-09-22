@@ -9,3 +9,12 @@
     margin-left: 25px;
     margin-right: 25px;
 }
+
+.cloud {
+    display: block; 
+    margin: 0 auto; 
+}
+
+.error-message {
+    text-align: center;
+}
