@@ -2,3 +2,12 @@
     display: flex;
     justify-content: center;
 }
+
+.ticket-form {
+    margin-left: 150px; 
+    margin-right: 150px; 
+    display: flex; 
+    justify-content: center;
+    flex-direction: column;
+}
+

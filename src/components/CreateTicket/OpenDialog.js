@@ -117,27 +117,38 @@ export default function FullScreenDialog() {
         <form 
             noValidate 
             autoComplete="off" 
-            className='login'
+            className='login ticket-form'
         >
+            <TextField
+                id="datetime-local"
+                label="Select Deadline"
+                type="datetime-local"
+                // style={{ marginTop: '40px'}}
+                defaultValue="2017-05-24T10:30"
+                className={classes.textField}
+                InputLabelProps={{
+                shrink: true,
+                }}
+            />
             <TextField 
                 id="standard-basic" 
                 label="Ticket Name" 
                 className='textfield item input'
-                style={{ marginTop: '20px' }}
+                style={{ marginTop: '40px' }}
             />
             <TextField 
                 type="standard-basic" 
                 id="standard-basic" 
                 label="Assign Team Members" 
                 className='textfield item input'
-                style={{ marginTop: '20px' }}
+                style={{ marginTop: '40px' }}
             />
             <TextField 
                 type="standard-basic" 
                 id="standard-basic" 
                 label="Add GitHub Links to Source Code" 
                 className='textfield item input'
-                style={{ marginTop: '20px' }}
+                style={{ marginTop: '40px' }}
             />
             <TextField
                 id="standard-multiline-flexible"
@@ -145,7 +156,7 @@ export default function FullScreenDialog() {
                 multiline
                 rowsMax={4}
                 className='input'
-                style={{ marginTop: '20px' }}
+                style={{ marginTop: '40px' }}
             />
             <TextField
                 id="standard-select-currency"
@@ -155,7 +166,7 @@ export default function FullScreenDialog() {
                 onChange={handleChange}
                 className='input'
                 helperText="Please select severity"
-                style={{ marginTop: '20px' }}
+                style={{ marginTop: '40px', marginBottom: '40px' }}
             >
                 {severities.map((option) => (
                     <MenuItem key={option.value} value={option.value}>
@@ -163,17 +174,6 @@ export default function FullScreenDialog() {
                 </MenuItem>
                 ))}
             </TextField>
-            <TextField
-                id="datetime-local"
-                label="Select Deadline"
-                type="datetime-local"
-                style={{ marginTop: '20px' }}
-                defaultValue="2017-05-24T10:30"
-                className={classes.textField}
-                InputLabelProps={{
-                shrink: true,
-                }}
-            />
         </form>
       </Dialog>
     </div>
