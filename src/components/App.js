@@ -8,14 +8,24 @@ import Profile from '../components/Profile/Profile';
 import Notification from '../components/Notification/Notification'; 
 import Message from '../components/Message/Message'; 
 import Teams from '../components/Teams/Teams'; 
+import { Switch } from '@material-ui/core';
 
 function App() {
   return (
     <div className="App">
+    <main>
+      <AppBar /> 
+        <Switch>
+          <Route path="/" component={Dashboard} exact /> 
+          <Route path="/teams" component={Teams} /> 
+          <Route path="/profile" component={Profile} /> 
+          <Route path="/message" component={Message} /> 
+          <Route path="/bugreport" component={BugReport} /> 
+          <Route path="/notification" component={Notification} /> 
+        </Switch>
+    </main>
       {/* <LogIn />  */}
       {/* <SignUp />  */}
-      <AppBar /> 
-      <Dashboard /> 
       {/* <BugReport />  */}
       {/* <CreateTicket />  */}
     </div>
