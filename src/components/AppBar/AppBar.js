@@ -13,16 +13,6 @@ import GroupIcon from '@material-ui/icons/Group';
 import BugReportIcon from '@material-ui/icons/BugReport';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import './AppBar.css'; 
-import Button from '@material-ui/core/Button';
-import Backdrop from '@material-ui/core/Backdrop';
-import SpeedDial from '@material-ui/lab/SpeedDial';
-import SpeedDialIcon from '@material-ui/lab/SpeedDialIcon';
-import SpeedDialAction from '@material-ui/lab/SpeedDialAction';
-import FileCopyIcon from '@material-ui/icons/FileCopyOutlined';
-import SaveIcon from '@material-ui/icons/Save';
-import PrintIcon from '@material-ui/icons/Print';
-import ShareIcon from '@material-ui/icons/Share';
-import FavoriteIcon from '@material-ui/icons/Favorite';
 import { Link } from 'react-router-dom'; 
 
 
@@ -78,44 +68,11 @@ const useStyles = makeStyles((theme) => ({
         width: '20ch',
       },
     },
-  },
-  root1: {
-    height: 380,
-    transform: 'translateZ(0px)',
-    flexGrow: 1,
-  },
-  speedDial: {
-    position: 'absolute',
-    bottom: theme.spacing(2),
-    right: theme.spacing(2),
   }
 }));
 
-const actions = [
-  { icon: <FileCopyIcon />, name: 'Copy' },
-  { icon: <SaveIcon />, name: 'Save' },
-  { icon: <PrintIcon />, name: 'Print' },
-  { icon: <ShareIcon />, name: 'Share' },
-  { icon: <FavoriteIcon />, name: 'Like' },
-];
-
 export default function SearchAppBar() {
   const classes = useStyles();
-
-  const [open, setOpen] = React.useState(false);
-  const [hidden, setHidden] = React.useState(false);
-
-  const handleVisibility = () => {
-    setHidden((prevHidden) => !prevHidden);
-  };
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
 
   return (
     <div className={classes.root}>
@@ -128,50 +85,27 @@ export default function SearchAppBar() {
             aria-label="open drawer"
           >
             <MenuIcon />
-            {/* <div className={classes.root1}>
-              <Button onClick={handleVisibility}>Toggle Speed Dial</Button>
-              <Backdrop open={open} />
-              <SpeedDial
-                ariaLabel="SpeedDial tooltip example"
-                className={classes.speedDial}
-                hidden={hidden}
-                icon={<SpeedDialIcon />}
-                onClose={handleClose}
-                onOpen={handleOpen}
-                open={open}
-              >
-            {actions.map((action) => (
-          <SpeedDialAction
-                key={action.name}
-                icon={action.icon}
-                tooltipTitle={action.name}
-                tooltipOpen
-                onClick={handleClose}
-          />
-            ))}
-            </SpeedDial>
-          </div> */}
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-            <Link to='/'>
-              BugView
+            <Link to='/' className='home'>
+              <div style={{ color: 'white' }}>BugView</div>
             </Link>
           </Typography>
           <div className='icons'>
           <Link to='/teams'>
-            <GroupIcon className='dashboard-icon' fontSize='large' />
+            <GroupIcon className='dashboard-icon' fontSize='large' style={{ color: 'white' }} />
           </Link>
           <Link to='/profile'>
-            <AccountCircleIcon className='dashboard-icon' fontSize='large' />
+            <AccountCircleIcon className='dashboard-icon' fontSize='large' style={{ color: 'white' }} />
           </Link>
           <Link to='/message'>
-            <MessageIcon className='dashboard-icon' fontSize='large' />
+            <MessageIcon className='dashboard-icon' fontSize='large' style={{ color: 'white' }} />
           </Link>
           <Link to='/bugreport'>
-            <BugReportIcon className='dashboard-icon' fontSize='large' /> 
+            <BugReportIcon className='dashboard-icon' fontSize='large' style={{ color: 'white' }} /> 
           </Link>
           <Link to='/notification'>
-            <NotificationsIcon className='dashboard-icon' fontSize='large' /> 
+            <NotificationsIcon className='dashboard-icon' fontSize='large' style={{ color: 'white' }} /> 
           </Link>
           </div>
           <Typography className={classes.title} variant="h6" noWrap>

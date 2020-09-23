@@ -1,70 +1,140 @@
-import React from 'react'; 
+import React, { Component } from 'react'; 
+import { Link } from 'react-router-dom'; 
 import './SignUp.css'
 import { TextField, Button } from '@material-ui/core';
-import logo from '../bugView.JPG';
 
-const LogIn = () => {
+class SignUp extends Component {
+    constructor() {
+        super(); 
+        this.state = {
+            firstName: '', 
+            lastName: '', 
+            jobTitle: '', 
+            email: '', 
+            password: '', 
+            password: '', 
+            errors: {}
+        }; 
+    }
 
-    return (
-        <div className='body' >
-            {/* <img 
-                src={logo} 
-                alt="bugview logo" 
-                className="logo"
-            />  */}
-        <div className='form'>
-        <form 
-            noValidate 
-            autoComplete="off" 
-            className='login'
-        >
-            <TextField 
-                id="standard-basic" 
-                label="First Name" 
-                className='textfield item'
-            />
-            <TextField 
-                id="standard-basic" 
-                label="Last Name" 
-                className='textfield item'
-            />
-            <TextField 
-                id="standard-basic" 
-                label="Job Title" 
-                className='textfield item'
-            />
-            <TextField 
-                id="standard-basic" 
-                label="Email" 
-                className='textfield item'
-            />
-            <TextField 
-                type="password" 
-                id="standard-basic" 
-                label="Password" 
-                className='textfield item'
-                style={{ marginTop: '20px' }}
-            />
-            <TextField 
-                type="password" 
-                id="standard-basic" 
-                label="Confirm Password" 
-                className='textfield item'
-                style={{ marginTop: '20px' }}
-            />
-            <Button 
-                variant="contained" 
-                color="primary"
-                className='item formButton'
-                style={{ marginTop: '30px' }}
-            >
-            Submit  
-            </Button>
-        
-        </form>
+    onChange = e => {
+        this.setState({ [e.target.id]: e.target.value }); 
+    }; 
+
+    onSubmit = e => {
+        e.preventDefault(); 
+
+        const newProfile = {
+            firstName: this.state.firstName, 
+            lastName: this.state.lastName, 
+            jobTitle: this.state.jobTitle, 
+            email: this.state.email, 
+            password: this.state.password, 
+            password2: this.state.password2
+        }
+
+        console.log(newProfile); 
+    }; 
+    render() {
+        const { errors } = this.state; 
+
+        return (
+            <div className="container">
+        <div className="row">
+          <div className="col s8 offset-s2">
+            <Link to="/" className="btn-flat waves-effect">
+              <i className="material-icons left">keyboard_backspace</i> Back to
+              home
+            </Link>
+            <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+              <h4>
+                <b>Register</b> below
+              </h4>
+              <p className="grey-text text-darken-1">
+                Already have an account? <Link to="/login">Log in</Link>
+              </p>
+            </div>
+            <form noValidate onSubmit={this.onSubmit}>
+              <div className="input-field col s12">
+                <input
+                  onChange={this.onChange}
+                  value={this.state.firstName}
+                  error={errors.firstName}
+                  id="first-name"
+                  type="text"
+                />
+                <label htmlFor="first-name">First Name</label>
+              </div>
+              <div className="input-field col s12">
+                <input
+                  onChange={this.onChange}
+                  value={this.state.lastName}
+                  error={errors.lastName}
+                  id="last-name"
+                  type="text"
+                />
+                <label htmlFor="last-name">Last Name</label>
+              </div>
+              <div className="input-field col s12">
+                <input
+                  onChange={this.onChange}
+                  value={this.state.jobTitle}
+                  error={errors.jobTitle}
+                  id="job-title"
+                  type="text"
+                />
+                <label htmlFor="job-title">Job Title</label>
+              </div>
+              <div className="input-field col s12">
+                <input
+                  onChange={this.onChange}
+                  value={this.state.email}
+                  error={errors.email}
+                  id="email"
+                  type="email"
+                />
+                <label htmlFor="email">Email</label>
+              </div>
+              <div className="input-field col s12">
+                <input
+                  onChange={this.onChange}
+                  value={this.state.password}
+                  error={errors.password}
+                  id="password"
+                  type="password"
+                />
+                <label htmlFor="password">Password</label>
+              </div>
+              <div className="input-field col s12">
+                <input
+                  onChange={this.onChange}
+                  value={this.state.password2}
+                  error={errors.password2}
+                  id="password2"
+                  type="password"
+                />
+                <label htmlFor="password2">Confirm Password</label>
+              </div>
+              <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+                <button
+                  style={{
+                    width: "150px",
+                    borderRadius: "3px",
+                    letterSpacing: "1.5px",
+                    marginTop: "1rem"
+                  }}
+                  type="submit"
+                  className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+                >
+                  Sign up
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-        </div>
-    )
+      </div>
+        )
+    }
 }
 
-export default LogIn; 
+export default SignUp; 
