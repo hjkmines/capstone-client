@@ -1,9 +1,8 @@
 import React, { Component } from 'react'; 
 import { Link } from 'react-router-dom'; 
-import './SignUp.css'
-import { TextField, Button } from '@material-ui/core';
+import './Register.css'
 
-class SignUp extends Component {
+class Register extends Component {
     constructor() {
         super(); 
         this.state = {
@@ -24,7 +23,7 @@ class SignUp extends Component {
     onSubmit = e => {
         e.preventDefault(); 
 
-        const newProfile = {
+        const newUser = {
             firstName: this.state.firstName, 
             lastName: this.state.lastName, 
             jobTitle: this.state.jobTitle, 
@@ -33,7 +32,7 @@ class SignUp extends Component {
             password2: this.state.password2
         }
 
-        console.log(newProfile); 
+        console.log(newUser); 
     }; 
     render() {
         const { errors } = this.state; 
@@ -137,4 +136,4 @@ class SignUp extends Component {
     }
 }
 
-export default SignUp; 
+export default Register; 
